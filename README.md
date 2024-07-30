@@ -82,30 +82,30 @@ Here are some SQL queries used to analyze the movie database:
    
 2. **Top 10 Highest Grossing Movies**
    ```sql
-SELECT
+   SELECT
     title,
     box_office
-FROM movies
-ORDER BY box_office DESC
-LIMIT 10;
+   FROM movies
+   ORDER BY box_office DESC
+   LIMIT 10;
 
 4. **Average Rating By Year**
    ```sql
-SELECT
+   SELECT
     release_year,
     AVG(rating) AS average_rating
-FROM movies
-GROUP BY release_year
-ORDER BY release_year;
+   FROM movies
+   GROUP BY release_year
+   ORDER BY release_year;
 
 4. **Actor Participation Analysis**
    ```sql
     a.name AS actor_name,
     COUNT(ma.movie_id) AS number_of_movies
-FROM actors a
-JOIN movie_actors ma ON a.actor_id = ma.actor_id
-GROUP BY a.actor_id
-ORDER BY number_of_movies DESC;
+   FROM actors a
+   JOIN movie_actors ma ON a.actor_id = ma.actor_id
+   GROUP BY a.actor_id
+   ORDER BY number_of_movies DESC;
 
 ## How to Use
 Run the SQL Script: Execute the movie_database_analysis.sql script to create the database and tables, and insert sample data.
